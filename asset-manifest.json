@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/elearningclient/static/css/main.be14dcc8.chunk.css",
+    "main.js": "/elearningclient/static/js/main.bf08cde5.chunk.js",
+    "main.js.map": "/elearningclient/static/js/main.bf08cde5.chunk.js.map",
+    "runtime-main.js": "/elearningclient/static/js/runtime-main.32193ea5.js",
+    "runtime-main.js.map": "/elearningclient/static/js/runtime-main.32193ea5.js.map",
+    "static/js/2.e82ba67e.chunk.js": "/elearningclient/static/js/2.e82ba67e.chunk.js",
+    "static/js/2.e82ba67e.chunk.js.map": "/elearningclient/static/js/2.e82ba67e.chunk.js.map",
+    "index.html": "/elearningclient/index.html",
+    "precache-manifest.8167660862e89842f691a4134d3d3416.js": "/elearningclient/precache-manifest.8167660862e89842f691a4134d3d3416.js",
+    "service-worker.js": "/elearningclient/service-worker.js",
+    "static/css/main.be14dcc8.chunk.css.map": "/elearningclient/static/css/main.be14dcc8.chunk.css.map",
+    "static/js/2.e82ba67e.chunk.js.LICENSE.txt": "/elearningclient/static/js/2.e82ba67e.chunk.js.LICENSE.txt",
+    "static/media/afrilearn_logo.png": "/elearningclient/static/media/afrilearn_logo.5c2db8b1.png",
+    "static/media/Banner.css": "/elearningclient/static/media/banner.71468626.jpg",
+    "static/media/jamb.png": "/elearningclient/static/media/jamb.f7d8bfcc.png",
+    "static/media/necco.png": "/elearningclient/static/media/necco.7156e57a.png",
+    "static/media/professional.webp": "/elearningclient/static/media/professional.1e5ea518.webp",
+    "static/media/waec.png": "/elearningclient/static/media/waec.1f3aff80.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32193ea5.js",
+    "static/js/2.e82ba67e.chunk.js",
+    "static/css/main.be14dcc8.chunk.css",
+    "static/js/main.bf08cde5.chunk.js"
+  ]
+}
