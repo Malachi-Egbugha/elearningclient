@@ -1,0 +1,23 @@
+.loginbanner {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.548), #141314a2), 
+    url(../assets/images/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.card{
+    min-width: 40vw;
+    opacity: 0.7;
+    color: #000;
+}
+.card-header{
+    background-color: #5D5753;
+    color: #fff;
+    font-weight: 600;
+}
