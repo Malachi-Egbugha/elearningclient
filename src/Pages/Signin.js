@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Navbar from '../Components/Navbar';
 import {Redirect} from 'react-router-dom';
 import './Signin.css';
@@ -37,7 +37,7 @@ const Signin =()=>
   };
   //handle signup form
   const signinform = () =>(
-    <form>
+    <form >
   <div className="form-group">
     <label for="exampleInputEmail1">Username</label>
     <input type="email" name="username" onChange={handleChange('email')} className="form-control"  placeholder="Enter Email"/>
@@ -46,11 +46,22 @@ const Signin =()=>
     <label for="exampleInputPassword1">Password</label>
     <input type="password" name="pass" onChange={handleChange('password')} className="form-control"  placeholder="Password"/>
   </div>
- 
+  {showLoading()}
   
   <button onClick={clickSubmit} type="submit" name="submit"  class="btn btn-danger">Login</button>
 </form>
+ 
+  );
+  //show loading
+  const showLoading = () =>(
+    loading && (
+    <div className="spinner">
+        <div></div>
+        <div></div>
 
+    
+      </div>
+      )
   );
   // redirect user to dashboard if referer is true
   const redirectUser = () =>{
@@ -65,6 +76,7 @@ const showError = () => (
     
   </div>
   );
+  
 
 return (
 
@@ -76,6 +88,7 @@ return (
     <div className="card">
   <div className="card-header">Login</div>
   <div className="card-body">
+  
   {showError()}
   {redirectUser()}
   {signinform()}
