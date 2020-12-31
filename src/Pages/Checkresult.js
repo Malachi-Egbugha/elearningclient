@@ -1,11 +1,11 @@
 import React from 'react'
-import StudentDashboard from '../Components/StudentDashboard';
+import Checkresult from '../Components/Checkresult';
 import Layouttwo from './Layouttwo';
 
 
 const Dashboard =()=>(
     <Layouttwo>
-        <StudentDashboard/>
+        <Checkresult/>
         
     </Layouttwo>
 

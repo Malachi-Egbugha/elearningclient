@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
- const Navbar=()=>(
+import {Link, withRouter} from 'react-router-dom';
+import {isActive,isAuthenticated, signout} from '../auth'
+
+ const Navbar=({history})=>(
      
 <nav className="navbar navbar-expand-xl navbar-dark" style={{backgroundColor: "#5D5753", fontSize: "1rem", color: "#fff",cursor: "pointer",fontFamily: "font-family: 'Cormorant Garamond', serif;" }}>
         
@@ -13,18 +15,33 @@ import {Link} from 'react-router-dom'
   <div className="collapse navbar-collapse" id="navbarColor01">
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
-        <Link className="nav-link" to="/" style={{color: "#fff", backgroundColor: "rgba(0, 0, 0,0.3)"}}>Home</Link>
+        <Link className="nav-link" to="/" style={ isActive(history, '/') ? {color: "#fff", backgroundColor: "rgba(0, 0, 0,0.3)"}:{color: "#fff"} }>Home</Link>
       </li>
-       <li className="nav-item ">
-        <Link className="nav-link " to="/signin" style={{color: "#fff"}}>
+      <li className="nav-item ">
+        <Link className="nav-link " to="/dashboard" style={ isActive(history, '/dashboard') ? {color: "#fff", backgroundColor: "rgba(0, 0, 0,0.3)"}:{color: "#fff"} }>
+          Dashboard
+        </Link>
+      </li> 
+      {!isAuthenticated() && ( 
+      <li className="nav-item ">
+        <Link className="nav-link " to="/signin" style={ isActive(history, '/signin') ? {color: "#fff", backgroundColor: "rgba(0, 0, 0,0.3)"}:{color: "#fff"} }>
           Signin
         </Link>
       </li> 
-      <li className="nav-item ">
-        <Link className="nav-link " to="/signout" style={{color: "#fff"}}>
-          Signout
-        </Link>
-      </li> 
+      )}
+
+      {isAuthenticated() && (
+         <li className="nav-item ">
+         <span className="nav-link " onClick={() => signout(() =>{
+           history.push('/')
+         })} style={{cursor: 'pointer', color: '#ffffff'}}>
+           Signout
+         </span>
+       </li> 
+
+      )}
+      
+     
     </ul>
 
    
@@ -34,4 +51,4 @@ import {Link} from 'react-router-dom'
 </nav>
  )
 
- export default Navbar;
+ export default withRouter(Navbar);

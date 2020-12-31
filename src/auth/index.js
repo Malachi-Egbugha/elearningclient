@@ -21,9 +21,48 @@ export const signin =async (user) =>{
 
 export const authenticate = (data, next)=> {
     if(typeof window !== 'undefined'){
-        localStorage.setItem('jwt', JSON.stringify(data));
+        localStorage.setItem('usersign', JSON.stringify(data));
         next();
 
     }
 
 };
+
+export const isAuthenticated= () =>{
+    if(typeof window == 'undefined'){
+        return false;
+    }
+    if(localStorage.getItem('usersign'))
+    {
+        return JSON.parse(localStorage.getItem('usersign'))
+    }
+    else{
+        return false;
+    }
+};
+
+
+export const isActive = (history, path) =>{
+    if(history.location.pathname === path)
+    {
+      return true; 
+    }
+    else{
+      return false
+    }
+  
+  };
+  export const signout = (next) =>{
+    if(typeof window !== 'undefined'){
+        localStorage.removeItem("usersign");
+        next();
+        return fetch(`${API}/signout`,{
+            method: "GET"
+
+        })
+        .then(response => {
+            console.log('signout', response)
+        })
+        .catch(err => console.log(err));
+    }
+  }
